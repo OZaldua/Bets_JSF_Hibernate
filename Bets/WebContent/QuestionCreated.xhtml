@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition>
+	<f:view>
+		<h:head>
+			<title>Question created</title>
+			<h:outputStylesheet library="css" name="style.css" />
+		</h:head>
+		<h:body>
+			<h:form id="galderaGehituaForm">
+
+				<h2>Your question has been successfully created!</h2>
+				<br />
+				<table>
+					<tr>
+						<td><h4>Check it out</h4> <h:button value="Query questions"
+								outcome="query" /></td>
+						<td><h4>or create a new one</h4> <h:button
+								value="Create question" outcome="create" /></td>
+					</tr>
+				</table>
+			</h:form>
+		</h:body>
+	</f:view>
+</ui:composition>
+</html>

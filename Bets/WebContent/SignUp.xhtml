@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition>
+	<f:view>
+		<h:head>
+			<title>Sign up</title>
+			<h:outputStylesheet library="css" name="style.css" />
+		</h:head>
+		<h:body>
+			<h:form id="signUpForm"  rendered="#{empty user}">
+				<h2>Erregistratu:</h2>
+				<table>
+					<tr>
+						<td>Izen eta abizenak:</td>
+						<td><h:inputText id="izen" value="#{userBean.izena}">
+							</h:inputText></td>
+					</tr>
+					<tr>
+						<td>Emaila:</td>
+						<td><h:inputText id="email" value="#{userBean.emaila}">
+								<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+							</h:inputText></td>
+					</tr>
+					<tr>
+						<td>Pasahitza:</td>
+						<td><h:inputSecret id="pass" redisplay="true"
+								value="#{userBean.pasahitza}">
+								<f:validateLength minimum = "8" />
+							</h:inputSecret></td>
+					</tr>
+					<tr>
+						<td>Errepikatu pasahitza:</td>
+						<td><h:inputSecret id="pass2" redisplay="true"
+								value="#{userBean.pasahitza2}">
+								<f:validateLength minimum = "8" />
+							</h:inputSecret></td>
+					</tr>
+					<tr>
+						<td><h:commandButton value="Sign up" action="#{userBean.signUp}" /></td>
+					</tr>
+				</table>
+			</h:form>
+			<h:messages id="mezuak" style="color:red" />
+		</h:body>
+	</f:view>
+</ui:composition>
+</html>
